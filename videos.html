@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/videos.css">
+    <title>Document</title>
+</head>
+<style>
+  body {
+    line-height: inherit;
+  }
+      /* navigation bar */
+      .nav-grid {
+    display: grid;
+    grid-template-columns:10% 90%; 
+    background: white;
+    color: black;
+    border-bottom: 1px solid;
+    position: sticky;
+    z-index:1;
+    top: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+  .logo {
+    width: 65px;
+    margin-left: 10px;
+
+  }
+  .main-grid {
+    display: grid;
+    color: darkblue;
+  }
+  .container-1 {
+    display: grid;
+    gap: 65px;
+    align-items: center;
+    grid-template-areas: 'name search mail mobile';
+  }
+  .item1 { grid-area: name;}
+  .item2 { grid-area: search;}
+  .item3 { grid-area: mail;}
+  .item4 { grid-area: mobile;}
+
+  .company-name {
+    font-size: 30px;
+    margin: 5px 5px;
+    font-weight: 600;
+    color: #215d0e;
+  }
+  .nav_design {
+    background-color: #215d0e;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 3px;
+    color: white;
+  }
+  .nav_design a {
+    color: white;
+  }
+  .mail {
+    background-color: #215d0e;
+      display: inline-block;
+      border-radius: 5px;
+      padding: 5px 3px;
+      color: white;
+  }
+  .mail_icon {
+    color: white;
+    margin: 5px;
+  }
+  .mail a {
+    color: white;
+  }
+  .phone-number {
+    background-color: #215d0e;
+      display: inline-block;
+      border-radius: 5px;
+      padding: 5px 3px;
+      color: white;
+  }
+  .phone-number a {
+    color: white;
+  }
+  .phone-number span {
+    margin: 5px;
+  }
+  .nav-container {
+    display: grid;
+    justify-content: center;    
+    grid-template-columns: auto auto auto auto auto auto;
+    align-items: center;
+    gap: 30px;
+    height: 30px;
+    background: goldenrod;
+  }
+  .nav_hide {
+    display: none;
+  }
+  .nav-container a {
+    display: inline-block;
+    font-size: 15px;
+    font-family: tahoma;
+    font-weight: 600;
+    color: #215d0e;
+  }
+  .nav-container a:hover {
+    background-color: #215d0e;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #ffc100;
+  }
+  .menu {
+    background-color: #215d0e;
+    border-radius: 10px;
+    color: white;
+  }
+  .products_btn {
+    background-color: #d1881a;
+    position: absolute;
+    border-radius: 10px;
+    padding: 3px 5px;
+    right: 25%;
+    top: 25%;
+  }
+  .products_close_btn {
+    background-color: #d1201a;
+    position: absolute;
+    border-radius: 10px;
+    padding:5px;
+    font-size: 15px;
+    right: 25%;
+    top: 25%;
+    width: 92px;
+  }
+  .menu_close {
+    top: 25px;
+    padding: 5px;
+    background: #d1201a;
+    border-radius: 10px;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+    }
+    .nav-container2 {
+      position: fixed;
+      right: 0;
+      display: grid;
+      z-index: 1;
+      grid-template-columns: auto;
+      margin-left: 48%;
+      list-style: none;
+      background-color: #215d0e;
+      border-radius: 10px;
+      width: 300px;
+      color: antiquewhite;
+      gap: 5px;
+      box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset;
+    }
+    .nav-container2 span {
+      margin: 5px;
+    }
+    .nav-container2 a {
+      margin: 5px;
+    }
+    .nav-container2 a:hover {
+      background-color: #e9ab0e;
+      border-radius: 5px;
+    }
+    a {
+    /* margin: 10px; */
+    color: white;
+  }
+    
+      .pulse {
+        animation: shadow-pulse 1s infinite;
+      }
+        @keyframes shadow-pulse {
+        0% {
+          box-shadow: 0 0 0 0px #ffb300c7;
+          }
+
+        100% {
+          box-shadow: 0 0 0 15px rgb(0 0 0 / 0%);
+          }
+      }
+
+    .video-main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(325px,1fr));
+        margin: 0% 2% 2%;
+        gap: 5px;
+    }
+    .video-main video {
+        width: 350px;
+        border-radius: 10px;
+    }
+    .video-main p {
+        font-size: 13px;
+        text-align: justify;
+        padding: 10px;
+        
+    }
+    .video-grid {
+        width: 350px;
+        height: 250px;
+        overflow: hidden;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .video-grid h4 {
+        text-align: center;
+        background-color: #e9ab0e;
+        border-radius: 25px;
+        display: inline-block;
+        padding: 2px 5px;
+    }
+    .footer {
+    display: grid;
+    width: 100%;
+    background-color: #215d0e;
+    bottom: 0;
+    border-radius: 15px 15px 0px 0px;
+    grid-template-columns: 21% 30% 30% 18%;
+    font-size: 14px;
+    font-family: tahoma;
+    text-decoration-color: lightgreen;
+    justify-items: center;
+  }
+  .address {
+    color: white;
+  }
+  .address1 {
+    font-size: large;
+  }
+  .media-icons {
+    display: grid;
+    gap: 10px;
+  }
+  .media-icons svg {
+    margin-left: 65px;
+  }
+  .services {
+    text-align: justify;
+  }
+  .online {
+    color: black;
+  }
+  .location-in {
+    margin-left: 35px;
+    width: 80%  ;
+    border-radius: 15px;
+    box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
+  }
+  .social_icons {
+    display: flex;
+    gap: 10px;
+    margin-left: 25px;
+  }
+  .services a {
+    color: white;
+    text-decoration: none;
+  }
+  .services a:hover {
+    color: blue;
+  }
+  .footer_tittle {
+    background: goldenrod;
+    padding: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px 0px 5px 35px;
+  }
+  .gmap_canvas {
+    margin-left: -10%;
+  }
+  .ftr-sub-head {
+    margin: 0;
+    background-color: rgb(83, 233, 83);
+    display: inline-block;
+    border-radius: 20px;
+    padding: 3px;
+    color: rgb(0, 0, 75);
+    font-size: 15px;
+  }
+  .wa_share_btn {
+    display: inline-block;
+    padding: 2px 5px;
+    position: fixed;
+    border-radius: 5px;
+    backdrop-filter: blur(0px) saturate(200%);
+    -webkit-backdrop-filter: blur(0px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.36);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    right: 0%;
+    top: 20%;
+    z-index: 1;
+    transform: rotate(-90deg);
+  }
+  .modal-body {
+    backdrop-filter: blur(13px) saturate(200%);
+    -webkit-backdrop-filter: blur(13px) saturate(200%);
+    background-color: rgba(25, 197, 0, 49%);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    text-align: justify;
+    position: fixed;
+    z-index: 1;
+    margin: 10%;
+    top: 0%;
+    color: #000060;
+    left: 5%;
+  }
+  /* body */
+  .title-area {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+.tittle {
+    color: #a77700;
+    font-size: 23px;
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: center;
+}
+.tittle-line {
+    background-color: #215d0e;
+    display: inline-block;
+    height: 3px;
+    margin-bottom: 16px;
+    width: 60px;
+}
+.ptext {
+    text-align: justify;
+    color: #215d0e;
+    line-height: 25px;
+    margin: 5px 4%;
+    transition: transform 6s;
+}
+.video-grid:hover {
+    height: 597px;
+}
+
+  
+  /* mobile responesive */
+    /* laptop */
+    @media screen and (min-width: 750px) {
+      .menu {
+              display: none;
+          }
+        .products_btn {
+          display: none;
+        }
+  }
+
+    @media screen and (max-width: 970px) { 
+    .footer {
+        grid-template-columns: auto auto;
+        justify-items: left;
+      }
+    .location {
+        margin-left: 10%;
+      }
+      .mail {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 870px) {
+      .nav-grid {
+              grid-template-columns: 13% 90%;
+          }
+          .company-name {
+              font-size: 25px;
+          }
+          .nav_design {
+            display: none;
+          }
+          .nav-container li {
+              font-size: 12px;
+          }
+          .products_btn {
+            right: 15%;
+            top: 35%;
+            font-size: 16px;
+            display: block;
+          }
+          .products_close_btn {
+            right: 15%;
+            top: 35%;
+          }
+          .nav-container {
+            display: none;
+          }
+          .phone-number {
+            display: none;
+          }
+          .menu {
+            display: block;
+            position: absolute;
+            right: 0;
+            padding: 5px;
+            top: 35%;
+          }
+  }
+    @media screen and (max-width: 750px) {
+      .nav-container {
+        gap: 10px;
+      }
+    }
+    /* mobile */
+    @media screen and (max-width: 450px) {
+      .nav-container {
+        display: none;
+    }
+    .nav-grid {
+        grid-template-columns: 15% 62% 23%;
+        height: 57px;
+        align-items: baseline;
+    }
+    .logo {
+        width: 50px;
+    }
+    .main-grid {
+        width: 90%;
+    }
+    .container-1 {
+        grid-template-rows: 16px;
+        align-items: flex-end;
+    }
+    .company-name {
+        font-size: 15px;
+    }
+    .nav_design {
+        display: none;
+    }
+    .mail {
+              display: none;
+          }
+          .phone-number {
+        display: none;
+    }
+    .menu {
+        top: 25%;
+        width: 62px;
+        padding-bottom: 2px;
+        cursor: pointer;
+    }
+    .menu_close {
+      top: 14px;
+      padding: 4px;
+    }
+    .products_btn {
+      display: block;
+      right: 25%;
+      top: 25%;
+      font-size: 14px;
+      cursor: pointer;
+      
+    }
+    .products_close_btn {
+      right: 25%;
+      top: 25%;
+      cursor: pointer;
+      padding: 3px 5px;
+    }
+    .nav-container2 li {
+      margin: 5px 5px 5px 10px;
+    }
+        /* fotter */
+    .loco {
+        margin-left: 0px;
+        }
+    .footer {
+        grid-template-columns: auto;
+        }
+    }
+          
+            /* mobile end */
+</style>
+<body>
+    <!-- navigation bar -->
+    <div class="nav-grid">
+      <div><img class="logo" src="https://www.drsoilhealth.com/way2at.png" alt="way2agribusiness logo"></div>
+      <div class="main-grid">
+        <div class="container-1">
+          <div class="item1">
+            <h5 class="company-name">Way<span style="color: #e9ab0e;">2</span>Agritech</h5>
+          </div>
+           <!-- chat with us -->
+          <div class="nav_design">
+            <i class="fa fa-whatsapp" style="font-size: 20px;margin-left: 5px;"></i>
+            <a href="https://wa.me/6361161836/?text=Hi">Chat with me</a>
+          </div>
+    <!-- END -->
+          <div class="mail item3">
+            <span class="glyphicon glyphicon-envelope mail_icon"></span><a href="mailto:way2agritech@gmail.com">way2agritech@gmail.com</a>
+          </div>
+          <div class="phone-number item4">
+            <span class="glyphicon glyphicon-earphone"></span><a href="tel:+919449004956">9449004956</a>
+          </div>
+        </div>
+        <div class="nav-container">
+        <a href="index.html"><span class="glyphicon glyphicon-home"></span>Home</a>
+        <a href="About.html"><span class="glyphicon glyphicon-leaf"></span>About us</a>
+        <a href="services.html"><span class="glyphicon glyphicon-book"></span>services</a>
+        <a href="videos.html"><span class="glyphicon glyphicon-grain"></span>Videos</a>
+        <a href="contact.html"><span class="glyphicon glyphicon-earphone"></span>Contact us</a>
+      </div>
+      </div>
+      <div class="menu">
+          <span class="glyphicon glyphicon-menu-hamburger"></span><span style="margin-top: 2px;">Menu</span>
+      </div>
+      <div class="products_btn pulse">Our Products<span class="glyphicon glyphicon-chevron-down"></span></div>
+      <div class="products_close_btn"><span class="glyphicon glyphicon-remove"></span>Close</div>
+      <div class="menu_close">
+          <span class="glyphicon glyphicon-remove"></span><span>Close</span>
+      </div>
+    </div>
+    <div class="nav-container2">
+    <a href="index.html"><span class="glyphicon glyphicon-home"></span>home</a>
+    <a href="About.html"><span class="glyphicon glyphicon-leaf"></span>About us</a>
+    <a href="services.html"><span class="glyphicon glyphicon-book"></span>Services</a>
+    <a href="videos.html"><span class="glyphicon glyphicon-education"></span>Videos</a> 
+    <a href="contact.html"><span class="glyphicon glyphicon-earphone"></span>Contact us</a>
+  </div>
+
+    <div class="title-area"><br>
+        <h2 class="tittle first">Agri Clinic & Videos</h2>
+        <span class="tittle-line"></span>
+    </div>
+    <p class="ptext">The core focus of www.drsoilhealth.com is farmers’ advisory and handholding with dissemination of right information on application of consumable agri inputs/products like growth promoters, plant protection products, crop growing media etc. With this background, Agri clinic & Videos (AC & Videos) address the knowledge gap on products we offer and covers relevant information, FAQ, technical guidance, handholding & live videos for the benefit of farmers and other participants in farming or crop cultivation activities. Frequent updation & making available instant access to latest information is also part of this activity. Proposed programmes will also supplement efforts of Govt. extension system.</p>
+    <div class="title-area"><br>
+        <h2 class="tittle first">Videos</h2>
+        <span class="tittle-line"></span>
+    </div>
+    
+    <div class="video-main">
+        <div class="video-grid">
+            <div class="video-container vg1">
+                <video controls="" width="500">
+                    <source src="https://www.drsoilhealth.com/vedios/dr soil health.mp4" type="video/webm">
+                </video>
+            </div>
+            <div>
+                <h4 style="margin-left:35%;">Dr soil health</h4>
+                <p class="ptext">
+                    Dr. Soil Health is an innovation in Biotechnology, a unique product formulated by the Research and development wing of Samarth Bio Tech ltd. Dr. Soil Health is manufactured using plant extracts which supplements energy source for higher yield and harvest and is composed of natural earthworm exudates, seaweeds extract, amino acids, vitamins, Fulvic acids, humic acids, chelated micro and macro nutrients, all of them derived from natural plant origin. Dr. Soil Health will result in development of roots & shoots and stimulates the cell division, improves the crop size and increasing the beneficial micro-organisms.
+                </p>
+            </div>
+        </div>
+        <div class="video-grid vg2">
+            <div class="video-container">
+                <video controls="" width="500">
+                    <source src="https://www.drsoilhealth.com/vedios/dr soil health.mp4" type="video/webm">
+                </video>
+            </div>
+            <div>
+                <h4 style="margin-left:39%;">Arecanut</h4>
+                <p class="ptext">
+                    Dr. Soil Health is an innovation in Biotechnology, a unique product formulated by the Research and development wing of Samarth Bio Tech ltd. Dr. Soil Health is manufactured using plant extracts which supplements energy source for higher yield and harvest and is composed of natural earthworm exudates, seaweeds extract, amino acids, vitamins, Fulvic acids, humic acids, chelated micro and macro nutrients, all of them derived from natural plant origin. Dr. Soil Health will result in development of roots & shoots and stimulates the cell division, improves the crop size and increasing the beneficial micro-organisms.
+                </p>
+            </div>
+        </div>
+        <div class="video-grid vg3">
+            <div class="video-container">
+                <video controls="" width="500">
+                    <source src="https://www.drsoilhealth.com/vedios/dr soil health.mp4" type="video/webm">
+                </video>
+            </div>
+            <div>
+                <h4 style="margin-left:30%;">Banana Plantation</h4>
+                <p class="ptext">
+                    Dr. Soil Health is an innovation in Biotechnology, a unique product formulated by the Research and development wing of Samarth Bio Tech ltd. Dr. Soil Health is manufactured using plant extracts which supplements energy source for higher yield and harvest and is composed of natural earthworm exudates, seaweeds extract, amino acids, vitamins, Fulvic acids, humic acids, chelated micro and macro nutrients, all of them derived from natural plant origin. Dr. Soil Health will result in development of roots & shoots and stimulates the cell division, improves the crop size and increasing the beneficial micro-organisms.
+                </p>
+            </div>
+        </div>
+        <div class="video-grid vg4">
+            <div class="video-container">
+                <video controls="" width="500">
+                    <source src="https://www.drsoilhealth.com/vedios/dr soil health.mp4" type="video/webm">
+                </video>
+            </div>
+            <div>
+                <h4 style="margin-left: 27%;">Way2Agribusiness</h4>
+                <p class="ptext">
+                    Dr. Soil Health is an innovation in Biotechnology, a unique product formulated by the Research and development wing of Samarth Bio Tech ltd. Dr. Soil Health is manufactured using plant extracts which supplements energy source for higher yield and harvest and is composed of natural earthworm exudates, seaweeds extract, amino acids, vitamins, Fulvic acids, humic acids, chelated micro and macro nutrients, all of them derived from natural plant origin. Dr. Soil Health will result in development of roots & shoots and stimulates the cell division, improves the crop size and increasing the beneficial micro-organisms.
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <div class="services">
+            <h3 class="footer_tittle" >Our services</h3>
+            <ul style="margin-left: -8px;line-height: 1; margin-top: 0px;">
+                <a href="https://www.way2agribusiness.com/" class="online"><span>&nbsp;&nbsp;way2agribusiness.com</span></a><br><br>
+                <a href="https://way2agritech.com/" class="online"><span>&nbsp;&nbsp;way2agritech.com</span></a><br><br>
+                <a href="https://way2foods.in/" class="online"><span>&nbsp;&nbsp;way2foods.in</span></a><br><br>
+                <a href="https://www.karnatakaagribusiness.com/" class="online"><span>&nbsp;&nbsp;karnatakaagribusiness.com</span></a><br><br>
+               <a href="https://www.powertiller.in/" class="online"><span>&nbsp;&nbsp;powertiller.in</span></a><br><br>
+                <a href="https://www.drsoilhealth.com/" class="online"><span>&nbsp;&nbsp;drsoilhealth.com</span></a><br><br>
+                <a href="https://www.urbanagriculture.in/" class="online"><span>&nbsp;&nbsp;urbanagriculture.in</span></a><br><br>
+                <a href="https://www.way2vegetables.com/" class="online"><span>&nbsp;&nbsp;way2vegetables.com</span></a><br><br>
+                <a href="https://www.way2groceries.in/" class="online"><span>&nbsp;&nbsp;way2groceries.in</span></a><br><br>
+               </ul>
+        </div>
+
+        <!-- footer -->
+        <div class="Address">
+            <h3 class="footer_tittle">Contact information</h3>
+        <div style="text-align: left;margin-left: 30px;">
+            <h4 class="ftr-sub-head">Address:</h4>
+            <div style="color: white;">ಕೃಷಿ ಉದ್ದಿಮೆ ಕೇಂದ್ರ/ Agribusiness Center
+            # 636, BDA Block 2, APMC (RMC) Yard, Yeshwanthpura, Bengaluru - 560022</div>
+            <h4 class="ftr-sub-head">Phone:</h4>
+            <div class="address" style="color:white">Landline: 080 95000388</div>
+            <div class="address" style="color:white"><span class="glyphicon glyphicon-earphone"></span>:+91-8277078435 &amp; &nbsp;9449004956</div>
+            <h4 class="ftr-sub-head">Mail:</h4>
+            <div class="address"><div><span class="glyphicon-envelope address1">:</span>@way2agribusiness.com<br>way2agritech@gmail.com</div></div>
+        </div>
+        <h4 style="margin-left: 30px;"class="ftr-sub-head">Follow us:</h4>
+        <div class="social_icons">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="35" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16"><a href="https://www.facebook.com/way2agribusiness"><path style="color: rgb(16, 36, 216);" d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></a></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="35" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"><a href="https://twitter.com/Way2agribusines"><path style="color: rgb(119, 221, 255);" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></a></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="35" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+              <a href="https://www.linkedin.com/feed/"></a>
+              <path style="color:rgb(0, 110, 255);" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="35" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+              <a href="https://www.youtube.com/channel/UCEpkh59M-MDOj0TH6lxRpMg"></a>
+              <path style="color: rgb(230, 45, 45);" d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+          </svg>
+          
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="35" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <a href="https://www.instagram.com/way2agribusiness/">
+              <path style="color:rgb(255, 136, 0);" d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </a>  
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="35" fill="currentColor" class="bi bi-pinterest" viewBox="0 0 16 16">
+              <a href="https://in.pinterest.com/Way2Agribusiness/_saved/"></a>
+              <path style="color: rgb(230, 45, 45);" d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"/>
+          </svg>
+        </div>
+        </div>
+        <div class="location">
+            <h3 class="footer_tittle loco">location</h3>
+            <div class="gmap_canvas">
+            <iframe class="location-in" width="300" height="150" id="gmap_canvas" src="https://maps.google.com/maps?q=Way2agribusiness&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe><a href="https://www.embedgooglemap.net"></a>
+          </div>
+        </div>
+    
+        <div div>
+          <h3 class="footer_tittle">Products</h3>
+        </div>
+    </div>
+
+    
+    <script>
+        $(".menu_close").hide()
+                $(".nav-container2").hide()
+                $(document).ready(function() {
+                  $(".menu").on("click", function() {
+                  $(".nav-container2").show()
+                  $(".menu").hide()
+                  $(".menu_close").show()
+                })
+                })
+                // close button
+                $(".menu_close").on("click", function() {
+                  $(".menu").show()
+                  $(".nav-container2").hide()
+                  $(".menu_close").hide()
+                })
+                
+                $(".products_close_btn").hide()
+              $(".products_btn").on("click", function() {
+                  $('.products-grid').show();
+                  $(".products_btn").hide();
+                  $(".products_close_btn").show();
+              })
+      
+              $(".products_close_btn").on("click", function() {
+                  $('.products-grid').hide();
+                  $(".products_btn").show();
+                  $(".products_close_btn").hide();
+              })
+      
+      </script>
+</body>
+</html>

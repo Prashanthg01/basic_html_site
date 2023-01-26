@@ -1,0 +1,407 @@
+body {
+    margin: 0;
+  }
+  ::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  }
+  ::-webkit-scrollbar-track {
+  background-color: rgb(189, 189, F189);
+  border-radius: 5rem;
+  }
+  ::-webkit-scrollbar-thumb {
+  background-color: #e9ab0e;
+  border-radius: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+  background: darkblue; 
+  }
+
+  .main-grid {
+    display: grid;
+    color: darkblue;
+  }
+  .heddings {
+    color: #215d0e;
+    text-decoration: underline #e9ab0e;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .nav-grid {
+    display: grid;
+    grid-template-columns:10% 90%; 
+    background: white;
+    color: black;
+    border-bottom: 1px solid;
+    position: sticky;
+    z-index:1;
+    top: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+  .item1 { grid-area: name;}
+  .item2 { grid-area: search;}
+  .item3 { grid-area: mail;}
+  .item4 { grid-area: mobile;}
+
+  .container-1 {
+    display: grid;
+    align-items: center;
+    grid-template-areas: 'name search mail mobile';
+  }
+  .nav-container {
+    display: grid;
+    justify-content: center;    
+    grid-template-columns: auto auto auto auto auto auto;
+    align-items: center;
+    gap: 30px;
+    height: 30px;
+    background: goldenrod;
+  }
+  .nav_hide {
+    display: none;
+  }
+  .nav-container li {
+    display: inline-block;
+    font-size: 15px;
+    font-family: tahoma;
+    font-weight: 600;
+  }
+  .nav-container li:hover {
+    background-color: #215d0e;
+    padding-right: 5px;
+    border-radius: 5px;
+    color: #ffc100;
+    
+  }
+  .search_bar_main {
+    display: flex;
+    align-items: center;
+  }
+  .search-bar {
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    margin: 5px 5px 5px 5px;
+    border: none;
+  }
+  .glyphicon {
+    margin: 4px;
+    font-size: 15px;
+  }
+  .company-name {
+    font-size: 30px;
+    margin: 5px 5px;
+    font-weight: 600;
+  }
+  .mail {
+    margin: 0px 20px 0px 20px;
+    font-weight: 600;
+    background-color: #20c0da;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+  .mail_icon {
+    color: black;
+  }
+  .phone-number {
+    margin: 0px 20px 0px 20px;
+    font-weight: 600;
+    background-color: #46bb38;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+  .logo {
+    width: 65px;
+    margin-left: 10px;
+
+  }
+  .menu {
+    background-color: #215d0e;
+    border-radius: 10px;
+    color: white;
+  }
+  .menu:hover {
+    background-color: antiquewhite;
+    border-radius: 5px;
+  }
+
+
+
+  .products-grid {
+    overflow: scroll;
+    width: 20%;
+    position: fixed;
+    padding: 10px 0px;
+    height: -webkit-fill-available;
+    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+    margin: 0px 0px 5px 5px;
+  }
+  .main-home-grid {
+    margin-left: 21%;
+  }
+
+  /* shopping */
+  .shopping {
+    margin-left: 27%;
+    font-size: 17px;
+    padding: 5px;
+    background-color: #215d0e;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .shopping :hover {
+    color: #e9ab0e;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  a {
+    color: #000048;
+  }
+  h3 {
+    margin: 5px 0px;
+    font-size: 20px;
+    background-color: #e9ab0e;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+  .products-grid li {
+    background-color: #e9ab0e;
+  }
+  .products-list {
+    display: inline-grid;
+    gap: 5px;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .products-list1 {
+    color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .products-list1 :hover {
+    color: #e9ab0e;
+    background-color: #215d0e;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  .pgp-grid {
+    margin-left: 10px;
+  }
+  .pps-grid {
+    margin-left: 10px;
+  }
+  .pps-inner-grid {
+    display: inline-grid;
+    gap: 5px;
+    max-height: 150px;
+    overflow-y: scroll;
+    
+  }
+  /* end */
+
+
+  /* mobile responesive */
+    /* laptop */
+    @media screen and (min-width: 750px) {
+        .menu {
+            display: none;
+        }
+        .products_btn {
+          display: none;
+        }       
+  }
+    @media screen and (max-width: 970px) { 
+      .mail {
+        display: none;
+      }
+      .drsoil-grid2 h1 {
+        margin-left: 13%;
+      }
+      .drsoil img {
+        margin-left: 13%;
+      }
+    }
+        /* tab */
+        @media screen and (max-width: 870px) {
+          .nav-container li {
+              font-size: 12px;
+          }
+          .company-name {
+              font-size: 25px;
+          }
+          .nav-grid {
+              grid-template-columns: 13% 90%;
+          }
+          .mail {
+              display: none;
+          }
+          .menu {
+              display: none;
+          }
+          .products_btn {
+            right: 30%;
+            top: 13%;
+            font-size: 16px;
+            display: block;
+          }
+          .search_bar_main {
+            display: none;
+          }
+          .products-grid {
+            display: none;
+            width: 50%;
+            margin: 0.5% 5% 5% 0.5%;
+            background-color: #000000b3;
+          }
+          .main-home-grid {
+            margin-left: 0;
+          }
+          .products_close_btn {
+            right: 30%;
+            top: 9%;
+          }
+      }
+    @media screen and (max-width: 750px) {
+      .nav-container {
+        gap: 10px;
+      } 
+    }
+    /* mobile */
+    @media screen and (max-width: 450px) {
+    .nav-grid {
+        grid-template-columns: 27% auto;
+    }
+    .nav-container {
+        display: none;
+    }
+    .logo {
+        width: 50px;
+    }
+    .container-1 {
+        display: grid;
+        grid-template-rows: 16px;
+        align-items: flex-end;
+    }
+    .company-name {
+        font-size: 15px;
+    }
+    .nav-grid {
+        grid-template-columns: 15% 62% 23%;
+        height: 57px;
+        align-items: baseline;
+    }
+    .search-bar {
+        height: 22px;
+        width: 118px;
+        font-size: 5px;
+        margin: 5px 5px 5px 5px;
+    }
+    .glyphicon {
+        font-size: 11px;
+        margin-top: 5px;
+    }
+    .phone-number {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        width: 62px;
+        padding-bottom: 2px;
+    }
+    .nav-container2 {
+      position: fixed;
+      display: grid;
+      z-index: 1;
+      grid-template-columns: auto;
+      margin-left: 48%;
+      list-style: none;
+      background-color: black;
+      border-radius: 10px;
+      width: 50%;
+      color: antiquewhite;
+      gap: 5px;
+      box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset;
+  }
+    .main-products {
+        grid-template-columns: auto auto;
+        justify-items: center;
+    }
+    .products_btn {
+      display: block;
+      right: 25%;
+      top: 25%;
+      font-size: 14px;
+    }
+    .products_close_btn {
+      right: 25%;
+      top: 25%;
+    }
+    .search_bar_main {
+        display: none;
+    }
+    .card {
+        top: 50%;
+        left: 50%;
+        width: 166px;
+        height: 195px;
+        float: left;
+        perspective: 500px;
+    }
+    .menu_close {
+        top: 15px;
+        padding: 1px 5px 1px 0px;
+        background: #d1201a;
+        border-radius: 20px;
+        position: absolute;
+        right: 35px;
+    }
+    .products-grid {
+      display: none;
+      width: 85%;
+      z-index: 1;
+      background-color: black;
+      margin: 0.5% 5% 5% 5%;
+      border-radius: 10px;
+      box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset;
+    }
+    a {
+      color: white;
+    }
+    .products-list {
+      display: inline-grid;
+    }
+    .nav-container2 li {
+      margin: 5px 5px 5px 10px;
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* mobile end */
